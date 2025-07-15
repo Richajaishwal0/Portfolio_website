@@ -98,9 +98,11 @@ const About: React.FC<AboutProps> = ({ darkMode, language }) => {
 
           {/* Ongoing Projects Section - Redesigned */}
           <div className="mb-8">
-            <p className={`text-xl md:text-2xl text-center max-w-3xl mx-auto mb-8 transition-all duration-500 ${
-              darkMode ? 'text-slate-200' : 'text-gray-700'
-            }`}>
+            <p
+              className={`text-xl md:text-2xl text-center max-w-3xl mx-auto mb-8 transition-all duration-500 ${
+                darkMode ? "text-slate-200" : "text-gray-700"
+              }`}
+            >
               {t.description}
             </p>
           </div>
@@ -114,8 +116,8 @@ const About: React.FC<AboutProps> = ({ darkMode, language }) => {
                   key={index}
                   className={`p-8 rounded-2xl shadow-xl border transition-all duration-500 group hover:scale-105 hover:shadow-2xl bg-gradient-to-br ${
                     darkMode
-                      ? 'from-purple-900/60 via-slate-900/80 to-pink-900/60 border-purple-700/40'
-                      : 'from-orange-100/80 via-rose-100/90 to-yellow-100/80 border-orange-300/40'
+                      ? "from-purple-900/60 via-slate-900/80 to-pink-900/60 border-purple-700/40"
+                      : "from-orange-100/80 via-rose-100/90 to-yellow-100/80 border-orange-300/40"
                   } backdrop-blur-2xl flex flex-col items-center text-center`}
                 >
                   <div className="mb-6 flex items-center justify-center">
