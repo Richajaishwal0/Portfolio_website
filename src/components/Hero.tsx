@@ -88,7 +88,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode, language }) => {
                 } flex items-center justify-center backdrop-blur-sm hover:shadow-3xl `}
               >
                 <img
-                  src="/profile.png" // Replace with actual image path
+                  src="./profile.png" // Use relative path for GitHub Pages
                   alt="Your Photo"
                   className="w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 max-w-full rounded-full object-cover transition-all duration-500 group-hover:scale-100"
                 />

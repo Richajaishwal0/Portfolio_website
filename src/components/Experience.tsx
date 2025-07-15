@@ -356,8 +356,8 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode, language }) => {
                 ×
               </button>
               <h4 className="text-lg font-bold mb-2 text-center text-gray-900 dark:text-white">GSSoC Certificates</h4>
-              <img src="/Richa_Kumari_Jaishwal_Badge_Contributor_GSSoC2024-Extd.png" alt="Richa Kumari Jaishwal GSSoC Badge" className="mb-2 rounded-lg shadow-md max-h-40 w-auto" />
-              <img src="/gssoc_badge.jpg" alt="GSSoC Badge" className="rounded-lg shadow-md max-h-32 w-auto" />
+              <img src="./Richa_Kumari_Jaishwal_Badge_Contributor_GSSoC2024-Extd.png" alt="Richa Kumari Jaishwal GSSoC Badge" className="mb-2 rounded-lg shadow-md max-h-40 w-auto" />
+              <img src="./gssoc_badge.jpg" alt="GSSoC Badge" className="rounded-lg shadow-md max-h-32 w-auto" />
             </div>
           </div>
         </>
@@ -376,7 +376,7 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode, language }) => {
                 ×
               </button>
               <h4 className="text-lg font-bold mb-2 text-center text-gray-900 dark:text-white">Hacktoberfest Certificate</h4>
-              <img src="/hb.png" alt="Hacktoberfest Certificate" className="rounded-lg shadow-md max-h-64 w-auto" />
+              <img src="./hb.png" alt="Hacktoberfest Certificate" className="rounded-lg shadow-md max-h-64 w-auto" />
             </div>
           </div>
         </>
