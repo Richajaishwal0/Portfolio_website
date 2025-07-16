@@ -135,43 +135,6 @@ const About: React.FC<AboutProps> = ({ darkMode, language }) => {
               );
             })}
           </div>
-
-          {/* Fun Facts with Enhanced Styling (only once, at the end) */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "8.86", label: "CGPA", icon: "🎓" },
-              { number: "7+", label: "Competitions", icon: "🏆" },
-              { number: "5⭐", label: "HackerRank", icon: "💻" },
-              { number: "97%", label: "Research Accuracy", icon: "🔬" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className={`text-center p-8 rounded-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 cursor-pointer group ${
-                  darkMode
-                    ? "bg-slate-800/30 border-2 border-slate-700/50 hover:border-purple-400/50 hover:shadow-2xl hover:shadow-purple-500/25"
-                    : "bg-white/30 border-2 border-gray-200/50 hover:border-orange-400/50 hover:shadow-2xl hover:shadow-orange-500/25"
-                } backdrop-blur-sm`}
-              >
-                <div className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-500">
-                  {stat.icon}
-                </div>
-                <div
-                  className={`text-4xl font-bold mb-2 transition-all duration-300 group-hover:scale-110 ${
-                    darkMode ? "text-white" : "text-gray-900"
-                  }`}
-                >
-                  {stat.number}
-                </div>
-                <div
-                  className={`text-lg transition-all duration-300 group-hover:scale-105 ${
-                    darkMode ? "text-slate-400" : "text-gray-600"
-                  }`}
-                >
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

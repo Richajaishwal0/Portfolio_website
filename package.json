@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://<Richajaishwal0>.github.io/My_main_portfolio/",
+  "homepage": "https://<Richajaishwal0>.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "dotenv": "^17.2.0",
+    "framer-motion": "^12.23.6",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
