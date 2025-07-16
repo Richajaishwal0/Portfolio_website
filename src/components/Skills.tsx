@@ -242,13 +242,6 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, language }) => {
                     </span>
                   ))}
                 </div>
-                <div
-                  className={`mt-4 text-xs font-semibold tracking-wide ${
-                    darkMode ? "text-cyan-200" : "text-orange-600"
-                  }`}
-                >
-                  Phase {idx + 1}
-                </div>
               </motion.div>
             ))}
           </div>
@@ -358,13 +351,6 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, language }) => {
                         : "bg-orange-400 border-red-400"
                     }`}
                   />
-                  <div
-                    className={`mt-2 text-xs font-semibold tracking-wide ${
-                      darkMode ? "text-cyan-200" : "text-orange-600"
-                    }`}
-                  >
-                    Phase {idx + 1}
-                  </div>
                 </motion.div>
               ))}
             </div>
@@ -451,19 +437,15 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, language }) => {
                     </div>
                   </div>
                   <div
-                    className={`w-5 h-5 rounded-full border-4 mt-4 shadow-lg ${
-                      darkMode
-                        ? "bg-cyan-400 border-purple-400"
-                        : "bg-orange-400 border-red-400"
-                    }`}
+                    className="w-5 h-5 rounded-full border-4 mt-4 shadow-lg"
+                    style={{
+                      background:
+                        darkMode
+                          ? "linear-gradient(135deg, #06b6d4 0%, #a78bfa 100%)"
+                          : "linear-gradient(135deg, #fb923c 0%, #ef4444 100%)",
+                      borderColor: darkMode ? "#a78bfa" : "#ef4444",
+                    }}
                   />
-                  <div
-                    className={`mt-2 text-xs font-semibold tracking-wide ${
-                      darkMode ? "text-cyan-200" : "text-orange-600"
-                    }`}
-                  >
-                    Phase {idx + 1}
-                  </div>
                 </motion.div>
               ))}
             </div>
