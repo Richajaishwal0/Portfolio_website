@@ -60,12 +60,6 @@ const Hero: React.FC<HeroProps> = ({ darkMode, language }) => {
       label: "Email",
       color: darkMode ? "hover:text-pink-300" : "hover:text-red-600",
     },
-    {
-      icon: Phone,
-      href: "tel:+918778823268",
-      label: "Phone",
-      color: darkMode ? "hover:text-green-300" : "hover:text-green-600",
-    },
   ];
 
   return (

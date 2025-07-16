@@ -42,14 +42,14 @@ const Header: React.FC<HeaderProps> = ({ darkMode, language }) => {
   };
 
   const navItems = [
-    { id: 'home', icon: Home, emoji: '🏠' },
-    { id: 'about', icon: User, emoji: '👩‍💻' },
-    { id: 'skills', icon: Code, emoji: '🛠️' },
-    { id: 'experience', icon: Briefcase, emoji: '💼' },
-    { id: 'projects', icon: FolderOpen, emoji: '📁' },
-    { id: 'research', icon: BookOpen, emoji: '📚' },
-    { id: 'certifications', icon: Award, emoji: '🏆' },
-    { id: 'contact', icon: Phone, emoji: '📞' }
+    { id: 'home', icon: Home },
+    { id: 'about', icon: User },
+    { id: 'skills', icon: Code },
+    { id: 'experience', icon: Briefcase },
+    { id: 'projects', icon: FolderOpen },
+    { id: 'research', icon: BookOpen },
+    { id: 'certifications', icon: Award },
+    { id: 'contact', icon: Phone },
   ];
 
   return (
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, language }) => {
                   }`}
                   title={item.id.charAt(0).toUpperCase() + item.id.slice(1)}
                 >
-                  <span className="text-lg">{item.emoji}</span>
+                  <IconComponent size={22} className="text-lg" />
                   
                   {/* Tooltip */}
                   <div className={`absolute -bottom-12 left-1/2 transform -translate-x-1/2 px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap ${
