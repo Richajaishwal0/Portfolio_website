@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Award, Calendar, ExternalLink, CheckCircle } from "lucide-react";
-import { FaPersonBooth, FaPencilRuler, FaTableTennis, FaCode, FaVideo } from "react-icons/fa";
+import {
+  FaPersonBooth,
+  FaPencilRuler,
+  FaTableTennis,
+  FaCode,
+  FaVideo,
+} from "react-icons/fa";
 
 interface CertificationsProps {
   darkMode: boolean;
@@ -435,7 +441,10 @@ const Certifications: React.FC<CertificationsProps> = ({
         </div>
       </section>
       {/* Extra Curricular Activities Section */}
-      <section id="extra-curricular" className="py-16 sm:py-20 md:py-24 lg:py-32">
+      <section
+        id="extra-curricular"
+        className="py-16 sm:py-20 md:py-24 lg:py-32"
+      >
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-500 cursor-default">
@@ -448,8 +457,8 @@ const Certifications: React.FC<CertificationsProps> = ({
               <span className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 shadow-lg mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
                 <FaPersonBooth className="text-white text-4xl drop-shadow-lg" />
               </span>
-              <span className="text-xl font-bold mb-2 text-white drop-shadow">Dancing</span>
-              <span className="text-base text-center text-purple-100">Expressing creativity and energy through various dance forms.</span>
+              <span className={`text-xl font-bold mb-2 drop-shadow ${darkMode ? 'text-white' : 'text-gray-900'}`}>Dancing</span>
+              <span className={`text-base text-center font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>Expressing creativity and energy through various dance forms.</span>
               <div className="absolute -top-8 -right-8 w-24 h-24 bg-pink-400/20 rounded-full blur-2xl animate-pulse" />
             </div>
             {/* Sketching */}
@@ -457,8 +466,8 @@ const Certifications: React.FC<CertificationsProps> = ({
               <span className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 shadow-lg mb-4 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500">
                 <FaPencilRuler className="text-white text-4xl drop-shadow-lg" />
               </span>
-              <span className="text-xl font-bold mb-2 text-white drop-shadow">Sketching</span>
-              <span className="text-base text-center text-orange-100">Bringing imagination to life with pencil and paper.</span>
+              <span className={`text-xl font-bold mb-2 drop-shadow ${darkMode ? 'text-white' : 'text-gray-900'}`}>Sketching</span>
+              <span className={`text-base text-center font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>Bringing imagination to life with pencil and paper.</span>
               <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-orange-300/20 rounded-full blur-2xl animate-pulse" />
             </div>
             {/* Playing Badminton */}
@@ -466,8 +475,8 @@ const Certifications: React.FC<CertificationsProps> = ({
               <span className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-blue-400 shadow-lg mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500">
                 <FaTableTennis className="text-white text-4xl drop-shadow-lg" />
               </span>
-              <span className="text-xl font-bold mb-2 text-white drop-shadow">Playing Badminton</span>
-              <span className="text-base text-center text-blue-100">Staying active and competitive on the court.</span>
+              <span className={`text-xl font-bold mb-2 drop-shadow ${darkMode ? 'text-white' : 'text-gray-900'}`}>Playing Badminton</span>
+              <span className={`text-base text-center font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>Staying active and competitive on the court.</span>
               <div className="absolute -top-8 -left-8 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse" />
             </div>
             {/* Coding */}
@@ -475,8 +484,8 @@ const Certifications: React.FC<CertificationsProps> = ({
               <span className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-blue-400 shadow-lg mb-4 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-500">
                 <FaCode className="text-white text-4xl drop-shadow-lg" />
               </span>
-              <span className="text-xl font-bold mb-2 text-white drop-shadow">Coding</span>
-              <span className="text-base text-center text-cyan-100">Building solutions and exploring new technologies.</span>
+              <span className={`text-xl font-bold mb-2 drop-shadow ${darkMode ? 'text-white' : 'text-gray-900'}`}>Coding</span>
+              <span className={`text-base text-center font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>Building solutions and exploring new technologies.</span>
               <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-cyan-400/20 rounded-full blur-2xl animate-pulse" />
             </div>
             {/* Creating Content */}
@@ -484,8 +493,8 @@ const Certifications: React.FC<CertificationsProps> = ({
               <span className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 shadow-lg mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
                 <FaVideo className="text-white text-4xl drop-shadow-lg" />
               </span>
-              <span className="text-xl font-bold mb-2 text-white drop-shadow">Creating Content</span>
-              <span className="text-base text-center text-pink-100">Sharing knowledge and creativity through digital media.</span>
+              <span className={`text-xl font-bold mb-2 drop-shadow ${darkMode ? 'text-white' : 'text-gray-900'}`}>Creating Content</span>
+              <span className={`text-base text-center font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>Sharing knowledge and creativity through digital media.</span>
               <a href="https://youtube.com/@grow_with_richa?si=GYbMjvD6R59CrqH1" target="_blank" rel="noopener noreferrer" className="mt-4 text-pink-200 underline font-semibold hover:text-pink-400 transition-colors">Visit my YouTube channel</a>
               <div className="absolute -top-8 -right-8 w-24 h-24 bg-purple-400/20 rounded-full blur-2xl animate-pulse" />
             </div>

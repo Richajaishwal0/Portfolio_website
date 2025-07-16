@@ -184,11 +184,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, language }) => {
         {/* Responsive Layout */}
         {isMobile ? (
           // Mobile/Tablet: Grid or stacked cards
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
             {skillCategories.map((category, idx) => (
               <motion.div
                 key={idx}
-                className={`relative rounded-2xl p-6 shadow-xl border-2 group transition-all duration-500 cursor-pointer backdrop-blur-lg overflow-hidden ${
+                className={`relative rounded-2xl p-3 sm:p-4 shadow-xl border group transition-all duration-500 cursor-pointer backdrop-blur-lg overflow-hidden ${
                   darkMode
                     ? "bg-slate-800/70 border-purple-700/40 text-white"
                     : "bg-white/80 border-orange-200/70 text-gray-900"
@@ -199,27 +199,27 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, language }) => {
                 viewport={{ once: true, amount: 0.3 }}
                 custom={idx}
               >
-                <div className="flex flex-col items-center mb-4">
+                <div className="flex flex-col items-center mb-2 sm:mb-4">
                   <div
-                    className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-4 mb-2 transition-all duration-500 ${
+                    className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl border-2 sm:border-4 mb-1 sm:mb-2 transition-all duration-500 ${
                       darkMode
                         ? "bg-gradient-to-br from-purple-600 to-cyan-600 border-purple-300"
                         : "bg-gradient-to-br from-orange-400 to-red-400 border-orange-200"
                     }`}
                   >
-                    <span className="text-3xl drop-shadow-lg">
+                    <span className="text-xl sm:text-2xl drop-shadow-lg">
                       {category.emoji}
                     </span>
                   </div>
                   <category.icon
-                    size={22}
-                    className={`mb-2 ${
+                    size={16}
+                    className={`mb-1 sm:mb-2 ${
                       darkMode ? "text-purple-300" : "text-orange-500"
                     }`}
                   />
-                  <h3 className="text-lg font-bold tracking-tight mb-2">
+                  <h3 className="text-base sm:text-lg font-bold tracking-tight mb-1 sm:mb-2">
                     <span
-                      className={`border-b-2 pb-0.5 ${
+                      className={`border-b pb-0.5 ${
                         darkMode ? "border-cyan-400" : "border-orange-400"
                       } transition-all duration-300`}
                     >
@@ -227,27 +227,22 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, language }) => {
                     </span>
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2 justify-center">
+                <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                   {category.skills.map((skill, skillIdx) => (
                     <span
                       key={skillIdx}
-                      className={`px-3 py-1 rounded-full text-sm font-semibold shadow border flex items-center gap-1 transition-all duration-300 ${
+                      className={`px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-semibold shadow border flex items-center gap-1 transition-all duration-300 ${
                         darkMode
                           ? "bg-gradient-to-r from-purple-500/30 to-cyan-500/30 text-purple-200 border-purple-400/30 hover:bg-purple-500/50 hover:text-cyan-100"
                           : "bg-gradient-to-r from-orange-400/30 to-red-400/30 text-orange-800 border-orange-400/30 hover:bg-orange-400/50 hover:text-white"
                       }`}
                     >
-                      <span className="mr-1 text-base">{skill.icon}</span>
+                      <span className="mr-1 text-base sm:text-base">
+                        {skill.icon}
+                      </span>
                       {skill.name}
                     </span>
                   ))}
-                </div>
-                <div
-                  className={`mt-4 text-xs font-semibold tracking-wide ${
-                    darkMode ? "text-cyan-200" : "text-orange-600"
-                  }`}
-                >
-                  Phase {idx + 1}
                 </div>
               </motion.div>
             ))}
@@ -358,13 +353,6 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, language }) => {
                         : "bg-orange-400 border-red-400"
                     }`}
                   />
-                  <div
-                    className={`mt-2 text-xs font-semibold tracking-wide ${
-                      darkMode ? "text-cyan-200" : "text-orange-600"
-                    }`}
-                  >
-                    Phase {idx + 1}
-                  </div>
                 </motion.div>
               ))}
             </div>
@@ -451,19 +439,14 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, language }) => {
                     </div>
                   </div>
                   <div
-                    className={`w-5 h-5 rounded-full border-4 mt-4 shadow-lg ${
-                      darkMode
-                        ? "bg-cyan-400 border-purple-400"
-                        : "bg-orange-400 border-red-400"
-                    }`}
+                    className="w-5 h-5 rounded-full border-4 mt-4 shadow-lg"
+                    style={{
+                      background: darkMode
+                        ? "linear-gradient(135deg, #06b6d4 0%, #a78bfa 100%)"
+                        : "linear-gradient(135deg, #fb923c 0%, #ef4444 100%)",
+                      borderColor: darkMode ? "#a78bfa" : "#ef4444",
+                    }}
                   />
-                  <div
-                    className={`mt-2 text-xs font-semibold tracking-wide ${
-                      darkMode ? "text-cyan-200" : "text-orange-600"
-                    }`}
-                  >
-                    Phase {idx + 1}
-                  </div>
                 </motion.div>
               ))}
             </div>

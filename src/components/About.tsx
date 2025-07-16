@@ -72,68 +72,73 @@ const About: React.FC<AboutProps> = ({ darkMode, language }) => {
     <section
       id="about"
       className={`py-16 sm:py-20 md:py-24 lg:py-32 ${
-        darkMode ? "bg-slate-800/20" : "bg-white/20"
+        darkMode ? "bg-slate-800/20" : "bg-orange-50/60"
       } backdrop-blur-sm`}
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h2
-              className={`text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r ${
-                darkMode
-                  ? "from-purple-400 to-cyan-400"
-                  : "from-orange-600 to-red-600"
-              } bg-clip-text text-transparent hover:scale-105 transition-transform duration-500 cursor-default`}
-            >
-              {t.title}
-            </h2>
-            <p
-              className={`text-2xl max-w-3xl mx-auto transition-all duration-500 hover:scale-105 ${
-                darkMode ? "text-slate-300" : "text-gray-600"
-              }`}
-            >
-              {t.subtitle}
-            </p>
-          </div>
-
-          {/* Ongoing Projects Section - Redesigned */}
-          <div className="mb-8">
-            <p
-              className={`text-xl md:text-2xl text-center max-w-3xl mx-auto mb-8 transition-all duration-500 ${
-                darkMode ? "text-slate-200" : "text-gray-700"
-              }`}
-            >
-              {t.description}
-            </p>
-          </div>
-
-          {/* Highlights Section (Academic Excellence, etc.) - Restored and Enhanced */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 md:mb-16 lg:mb-20">
-            {t.highlights.map((highlight, index) => {
-              const IconComponent = highlight.icon;
-              return (
-                <div
-                  key={index}
-                  className={`p-8 rounded-2xl shadow-xl border transition-all duration-500 group hover:scale-105 hover:shadow-2xl bg-gradient-to-br ${
-                    darkMode
-                      ? "from-purple-900/60 via-slate-900/80 to-pink-900/60 border-purple-700/40"
-                      : "from-orange-100/80 via-rose-100/90 to-yellow-100/80 border-orange-300/40"
-                  } backdrop-blur-2xl flex flex-col items-center text-center`}
-                >
-                  <div className="mb-6 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-xl flex items-center justify-center bg-gradient-to-br from-pink-400 to-purple-400 dark:from-orange-400 dark:to-pink-400 shadow-lg">
-                      <IconComponent size={36} className="text-white" />
-                    </div>
+          <div className="flex flex-col md:flex-row items-start text-left pl-0 md:pl-8 mb-12 md:mb-16 lg:mb-20 w-full md:gap-x-12">
+            <div className="w-full md:w-1/2">
+              <h2
+                className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r ${
+                  darkMode
+                    ? "from-purple-400 to-cyan-400"
+                    : "from-orange-700 to-pink-600"
+                } bg-clip-text text-transparent hover:scale-105 transition-transform duration-500 cursor-default`}
+              >
+                {t.title}
+              </h2>
+              <p
+                className={`text-2xl mb-4 transition-all duration-500 hover:scale-105 ${
+                  darkMode ? "text-slate-300" : "text-orange-800"
+                }`}
+              >
+                {t.subtitle}
+              </p>
+              <p
+                className={`text-xl md:text-2xl mb-8 transition-all duration-500 ${
+                  darkMode ? "text-slate-200" : "text-orange-900"
+                }`}
+              >
+                {t.description}
+              </p>
+            </div>
+            <div className="w-full flex w-full md:w-1/2 h-full items-center justify-center mt-6 md:mt-0">
+              <div className="w-full max-w-md">
+                <h3 className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r ${
+                  darkMode
+                    ? "from-purple-400 to-cyan-400"
+                    : "from-orange-700 to-pink-600"
+                } bg-clip-text text-transparent hover:scale-105 transition-transform duration-500 cursor-default`}>Education</h3>
+                <div className="relative pl-6 border-l-4 border-cyan-400/80">
+                  {/* Timeline Dot and Entry */}
+                  <div className="mb-10">
+                    <div className="absolute -left-3 w-6 h-6 bg-cyan-500 shadow-lg shadow-cyan-400/60 rounded-full border-4 border-white"></div>
+                    <div className={`mb-1 text-sm sm:text-base ${darkMode ? 'text-white' : 'text-orange-700'}`}>Present<br className="hidden sm:block"/>2023 - 2027</div>
+                    <div className={`font-bold text-lg sm:text-xl mb-1 drop-shadow-md ${darkMode ? 'text-white' : 'text-orange-900'}`}>Amrita Vishwa Vidyapeetham, Chennai Campus<br /></div>
+                    <div className={`text-sm sm:text-lg ${darkMode ? 'text-white' : 'text-orange-800'}`}>B-Tech - Computer Science and Engineering <br/>CGPA : <span className={`${darkMode ? 'text-white font-bold' : 'text-orange-700 font-bold'}`}>8.86 /10</span></div>
                   </div>
-                  <h3 className="font-bold text-xl md:text-2xl mb-3 text-white group-hover:text-pink-200 transition-colors duration-300">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-base text-slate-300 dark:text-slate-200 group-hover:text-white transition-colors duration-300">
-                    {highlight.desc}
-                  </p>
+                  <div className="mb-10">
+                    <div
+                      className="absolute -left-3 w-6 h-6 bg-cyan-400 rounded-full border-4 border-white"
+                      style={{ top: "90px" }}
+                    ></div>
+                    <div className={`mb-1 text-sm sm:text-base ${darkMode ? 'text-white' : 'text-orange-700'}`}>2023</div>
+                    <div className={`font-bold text-lg sm:text-xl mb-1 drop-shadow-md ${darkMode ? 'text-white' : 'text-orange-900'}`}>Kantipur International College</div>
+                    <div className={`text-sm sm:text-lg ${darkMode ? 'text-white' : 'text-orange-800'}`}>Biology: GPA : <span className={`${darkMode ? 'text-white font-bold' : 'text-orange-700 font-bold'}`}>3.67 / 4</span></div>
+                  </div>
+                  <div>
+                    <div
+                      className="absolute -left-3 w-6 h-6 bg-cyan-400 rounded-full border-4 border-white"
+                      style={{ top: "180px" }}
+                    ></div>
+                    <div className={`mb-1 text-sm sm:text-base ${darkMode ? 'text-white' : 'text-orange-700'}`}>2021</div>
+                    <div className={`font-bold text-lg sm:text-xl mb-1 drop-shadow-md ${darkMode ? 'text-white' : 'text-orange-900'}`}>Kantipur Secondary School</div>
+                    <div className={`text-sm sm:text-lg ${darkMode ? 'text-white' : 'text-orange-800'}`}>School : GPA : <span className={`${darkMode ? 'text-white font-bold' : 'text-orange-700 font-bold'}`}>3.95 / 4</span></div>
+                  </div>
                 </div>
-              );
-            })}
+              </div>
+            </div>
           </div>
         </div>
       </div>

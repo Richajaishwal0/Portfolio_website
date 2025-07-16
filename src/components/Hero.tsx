@@ -7,6 +7,7 @@ import {
   Download,
   ArrowDown,
 } from "lucide-react";
+import { Typewriter } from 'react-simple-typewriter';
 
 interface HeroProps {
   darkMode: boolean;
@@ -65,26 +66,26 @@ const Hero: React.FC<HeroProps> = ({ darkMode, language }) => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-20"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 pb-12 sm:pt-20 sm:pb-20 w-full"
     >
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="w-full max-w-full px-2 sm:px-6 text-center relative z-10 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">
           {/* Profile Photo Placeholder with Enhanced Styling */}
-          <div className="mb-12 flex justify-center">
+          <div className="mb-8 sm:mb-12 flex justify-center">
             <div
               className={`relative group cursor-pointer transition-all duration-700 hover:scale-110`}
             >
               <div
-                className={`w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 max-w-full rounded-full border-4 transition-all duration-700 ${
+                className={`w-28 h-28 xs:w-36 xs:h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 max-w-full rounded-full border-4 transition-all duration-700 ${
                   darkMode
                     ? "border-purple-400 bg-gradient-to-br from-purple-600/30 to-pink-600/30 shadow-2xl shadow-purple-500/25"
                     : "border-orange-400 bg-gradient-to-br from-orange-400/30 to-red-400/30 shadow-2xl shadow-orange-500/25"
                 } flex items-center justify-center backdrop-blur-sm hover:shadow-3xl `}
               >
                 <img
-                  src="./profile.png" // Use relative path for GitHub Pages
+                  src="./profile.png"
                   alt="Your Photo"
-                  className="w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 max-w-full rounded-full object-cover transition-all duration-500 group-hover:scale-100"
+                  className="w-24 h-24 xs:w-32 xs:h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 max-w-full rounded-full object-cover transition-all duration-500 group-hover:scale-100"
                 />
 
                 {/* Animated Ring */}
@@ -99,15 +100,15 @@ const Hero: React.FC<HeroProps> = ({ darkMode, language }) => {
           </div>
 
           <div
-            className={`text-2xl mb-6 transition-all duration-500 ${
-              darkMode ? "text-purple-300" : "text-orange-600"
+            className={`text-lg xs:text-xl mb-4 sm:mb-6 transition-all duration-500 ${
+              darkMode ? "text-purple-300" : "text-orange-700"
             } animate-pulse`}
           >
             {t.greeting}
           </div>
 
           <h1
-            className={`text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r ${
+            className={`text-3xl xs:text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-8 bg-gradient-to-r ${
               darkMode
                 ? "from-purple-400 via-pink-500 to-cyan-400"
                 : "from-orange-500 via-red-500 to-yellow-500"
@@ -117,16 +118,24 @@ const Hero: React.FC<HeroProps> = ({ darkMode, language }) => {
           </h1>
 
           <h2
-            className={`text-3xl md:text-4xl mb-6 font-light transition-all duration-500 hover:scale-105 ${
-              darkMode ? "text-slate-300" : "text-gray-700"
+            className={`text-lg xs:text-xl sm:text-3xl md:text-4xl mb-4 sm:mb-6 font-light transition-all duration-500 hover:scale-105 ${
+              darkMode ? "text-slate-300" : "text-gray-800"
             }`}
           >
-            {t.title}
+            <Typewriter
+              words={[t.title]}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={60}
+              deleteSpeed={40}
+              delaySpeed={2000}
+            />
           </h2>
 
           <p
-            className={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed transition-all duration-500 hover:scale-105 ${
-              darkMode ? "text-slate-400" : "text-gray-600"
+            className={`text-base xs:text-lg sm:text-xl md:text-2xl mb-6 sm:mb-10 max-w-xs xs:max-w-md sm:max-w-2xl md:max-w-3xl mx-auto leading-relaxed transition-all duration-500 hover:scale-105 ${
+              darkMode ? "text-slate-400" : "text-gray-700"
             }`}
           >
             {t.subtitle}
@@ -134,16 +143,16 @@ const Hero: React.FC<HeroProps> = ({ darkMode, language }) => {
 
           {/* Academic Info with Enhanced Styling */}
           <div
-            className={`inline-flex items-center space-x-3 px-6 py-4 rounded-full mb-12 transition-all duration-500 hover:scale-105 cursor-pointer ${
+            className={`inline-flex items-center space-x-2 xs:space-x-3 px-3 py-2 xs:px-6 xs:py-4 rounded-full mb-8 sm:mb-12 transition-all duration-500 hover:scale-105 cursor-pointer ${
               darkMode
                 ? "bg-purple-800/30 border-2 border-purple-400/50 hover:bg-purple-700/40"
-                : "bg-orange-200/30 border-2 border-orange-400/50 hover:bg-orange-300/40"
+                : "bg-orange-100/60 border-2 border-orange-400/70 hover:bg-orange-200/80"
             } backdrop-blur-md shadow-xl hover:shadow-2xl`}
           >
-            <span className="text-3xl animate-bounce">🎓</span>
+            <span className="text-xl xs:text-3xl animate-bounce">🎓</span>
             <span
-              className={`font-medium ${
-                darkMode ? "text-slate-200" : "text-gray-800"
+              className={`font-medium text-xs xs:text-base sm:text-lg ${
+                darkMode ? "text-slate-200" : "text-orange-900"
               }`}
             >
               Amrita Vishwa Vidyapeetham, Chennai | CGPA: 8.86/10
