@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import { Briefcase, Award, Users, Code } from "lucide-react";
+import {
+  FaCode,
+  FaPencilRuler,
+  FaTableTennis,
+  FaVideo,
+  FaPersonBooth,
+} from "react-icons/fa";
 
 interface ExperienceProps {
   darkMode: boolean;
@@ -125,6 +132,7 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode, language }) => {
     "HackerRank 5-Star Achievement": { type: "image", src: "/hr.jpg" },
     "Postman Student Expert": { type: "image", src: "/Postman_API.jpg" },
   };
+  const [showDanceModal, setShowDanceModal] = useState(false);
 
   return (
     <section
@@ -303,42 +311,7 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode, language }) => {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "2+", label: "Months Internship", icon: "💼" },
-              { number: "7+", label: "Competitions", icon: "🏆" },
-              { number: "3+", label: "Open Source PRs", icon: "🔧" },
-              { number: "5⭐", label: "HackerRank Rating", icon: "⭐" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className={`text-center p-8 rounded-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 cursor-pointer group ${
-                  darkMode
-                    ? "bg-slate-800/30 border-2 border-slate-700/50 hover:border-purple-400/50 hover:shadow-2xl hover:shadow-purple-500/25"
-                    : "bg-white/30 border-2 border-gray-200/50 hover:border-orange-400/50 hover:shadow-2xl hover:shadow-orange-500/25"
-                } backdrop-blur-sm`}
-              >
-                <div className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-500">
-                  {stat.icon}
-                </div>
-                <div
-                  className={`text-4xl font-bold mb-2 transition-all duration-300 group-hover:scale-110 ${
-                    darkMode ? "text-white" : "text-gray-900"
-                  }`}
-                >
-                  {stat.number}
-                </div>
-                <div
-                  className={`text-lg transition-all duration-300 group-hover:scale-105 ${
-                    darkMode ? "text-slate-400" : "text-gray-600"
-                  }`}
-                >
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* End of Extra Curricular Activities */}
         </div>
       </div>
       {/* Modal for Experience & Achievements cards */}
@@ -511,6 +484,48 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode, language }) => {
                 alt="Hacktoberfest Certificate"
                 className="rounded-lg shadow-md max-h-64 w-auto"
               />
+            </div>
+          </div>
+        </>
+      )}
+      {/* Dancing Modal */}
+      {showDanceModal && (
+        <>
+          <div
+            className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
+            onClick={() => setShowDanceModal(false)}
+          />
+          <div className="fixed inset-0 z-50 flex items-center justify-center">
+            <div className="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl p-4 w-[90vw] max-w-2xl flex flex-col items-center border border-gray-200 dark:border-slate-700">
+              <button
+                className="absolute top-2 right-2 text-2xl text-gray-700 dark:text-gray-200 hover:text-red-500 transition-colors"
+                onClick={() => setShowDanceModal(false)}
+                aria-label="Close"
+              >
+                ×
+              </button>
+              <h4 className="text-lg font-bold mb-4 text-center text-gray-900 dark:text-white">
+                Dancing - My Performance
+              </h4>
+              <div className="w-full aspect-video mb-4 rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/PYh_GN5LIz4?autoplay=1"
+                  title="Dancing Performance"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <a
+                href="https://www.youtube.com/@RichaJaishwal0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline font-semibold hover:text-blue-800 transition-colors"
+              >
+                Visit my YouTube channel
+              </a>
             </div>
           </div>
         </>

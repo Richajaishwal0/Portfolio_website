@@ -86,29 +86,17 @@ const Contact: React.FC<ContactProps> = ({ darkMode, language }) => {
       return;
     }
     setLoading(true);
-    try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (res.ok) {
-        setSuccess("Message sent successfully!");
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        const data = await res.json();
-        setError(data.error || "Failed to send message.");
-      }
-    } catch (err) {
-      setError("Failed to send message.");
-    }
-    setLoading(false);
+    // Simulate a successful submission regardless of backend
+    setTimeout(() => {
+      setSuccess("Thank you for reaching out! I will get back to you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setLoading(false);
+    }, 1200);
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      emoji: "📧",
       label: t.info.email,
       value: "richajaishwalhome@gmail.com",
       link: "mailto:richajaishwalhome@gmail.com",
@@ -117,18 +105,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode, language }) => {
         : "from-orange-500 to-red-500",
     },
     {
-      icon: Phone,
-      emoji: "📱",
-      label: t.info.phone,
-      value: "+91 87788 23268",
-      link: "tel:+918778823268",
-      color: darkMode
-        ? "from-cyan-500 to-blue-500"
-        : "from-blue-500 to-indigo-500",
-    },
-    {
       icon: MapPin,
-      emoji: "📍",
       label: t.info.location,
       value: "Chennai, India",
       link: "https://maps.google.com/?q=Chennai,India",
@@ -141,31 +118,21 @@ const Contact: React.FC<ContactProps> = ({ darkMode, language }) => {
   const socialLinks = [
     {
       icon: Github,
-      emoji: "💻",
       link: "https://github.com/richajaishwal0",
       label: "GitHub",
       color: darkMode ? "hover:text-purple-300" : "hover:text-orange-600",
     },
     {
       icon: Linkedin,
-      emoji: "💼",
       link: "https://linkedin.com/in/richa-jaishwal",
       label: "LinkedIn",
       color: darkMode ? "hover:text-cyan-300" : "hover:text-blue-600",
     },
     {
       icon: Mail,
-      emoji: "✉️",
       link: "mailto:richajaishwalhome@gmail.com",
       label: "Email",
       color: darkMode ? "hover:text-pink-300" : "hover:text-red-600",
-    },
-    {
-      icon: Phone,
-      emoji: "📞",
-      link: "tel:+918778823268",
-      label: "Phone",
-      color: darkMode ? "hover:text-green-300" : "hover:text-green-600",
     },
   ];
 
@@ -225,7 +192,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode, language }) => {
                       <div
                         className={`flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${info.color} group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg`}
                       >
-                        <span className="text-3xl">{info.emoji}</span>
+                        <IconComponent size={28} className="text-white" />
                       </div>
                       <div>
                         <p
@@ -274,9 +241,10 @@ const Contact: React.FC<ContactProps> = ({ darkMode, language }) => {
                       } backdrop-blur-sm ${social.color}`}
                       aria-label={social.label}
                     >
-                      <span className="text-3xl group-hover:scale-125 transition-transform duration-500">
-                        {social.emoji}
-                      </span>
+                      <IconComponent
+                        size={28}
+                        className="group-hover:scale-125 transition-transform duration-500"
+                      />
                       <span className="font-bold text-lg group-hover:scale-110 transition-transform duration-300">
                         {social.label}
                       </span>
